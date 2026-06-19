@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script>
+	var playerScore = 0;
+	var computerScore = 0;
+	
+	function clicker(playerChoice) {
+		var choices = ["rock", "paper", "scissors"]
+		var computerChoice = choices[Math.floor(Math.random() * choices.length)];
+		
+		if (playerChoice === computerChoice) {
+			document.getElementById("result").innerText = "Draw";
+		}
+		else if (
+		(playerChoice === "rock" && computerChoice === "scissors") ||
+		(playerChoice === "scissors" && computerChoice === "paper") ||
+		(playerChoice === "paper" && computerChoice === "rock")
+		) {
+			document.getElementById("result").innerText = "Player Wins"
+			playerScore ++;
+		}
+		
+		else {
+			computerScore ++;
+			document.getElementById("result").innerText = "Computer Wins"
+		}
+		document.getElementById("computer").innerText = "Computer chose: " + computerChoice;
+		document.getElementById("score").innerText = "Player Score: " + playerScore;
+		document.getElementById("cscore").innerText = "Computer Score: " + computerScore;
+	}
+	
+
+	</script>
+	<button onclick="clicker('rock')">Rock</button>
+	<button onclick="clicker('paper')">Paper</button>
+	<button onclick="clicker('scissors')">Scissor</button>
+	<p id = "computer"></p>
+	<p id="result"></p>
+	<p id = "score"></p>
+	<p id = "cscore"></p>
+	
+  </body>
+</html>

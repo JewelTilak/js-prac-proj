@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <button onclick = "game('rock')">Rock</button>
+  <button onclick = "game('paper')">Paper</button>
+  <button onclick = "game('scissor')">Scissor</button>
+  <p id = "computerChoice"></p>
+  <p id = "result"></p>
+  <p id = "playerScore"></p>
+  <p id = "computerScore"></p>
+
+    <script>
+	var playerScore = 0;
+	var computerScore = 0;
+		function game(playerChoice) {
+			var choices = ["rock", "paper", "scissor"];
+			
+			var computerChoice = choices[Math.floor(Math.random() * choices.length)]
+			
+			if (playerChoice === computerChoice) {
+				document.getElementById("result").innerText = "Draw";
+			}
+			
+			else if (
+			(playerChoice === "rock" && computerChoice === "scissor") ||
+			(playerChoice === "paper" && computerChoice === "rock") ||
+			(playerChoice === "scissor" && computerChoice === "paper")
+			) {
+				document.getElementById("result").innerText = "Player Wins" 
+				playerScore ++;
+				document.getElementById("playerScore").innerText = "Player Score: " + playerScore;
+			}
+			
+			else {
+				document.getElementById("result").innerText = "Computer Wins"
+				computerScore ++;
+				document.getElementById("computerScore").innerText = "Computer Score: " + computerScore;
+				
+			}
+			
+		}
+	
+	</script>
+  </body>
+</html>
