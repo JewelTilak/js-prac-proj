@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Menu</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>JJ Bread and Bed</h2>
+	<button onclick="order('pizza')">Pizza</button>
+	<button onclick="order('burger')">Burger</button>
+	<button onclick="order('sandwich')">Sandwich</button>
+	<button onclick="order('pasta')">Pasta</button>
+	
+	<p id="item"></p>
+	<p id="price"></p>
+	<p id="total">Total Bill: Rs.0</p>
+	<p id="pizzaCount">Pizza: 0</p>
+	<p id="burgerCount">Burger: 0</p>
+	<p id="sandwichCount">Sandwich: 0</p>
+	<p id="pastaCount">Pasta: 0</p>
+	<script>
+	var totalBill =0;
+	var pizzaCount = 0;
+	var burgerCount = 0;
+	var sandwichCount = 0;
+	var pastaCount = 0;
+	
+	function order(itemName) {
+		var price;
+		switch(itemName) {
+			case "pizza": price = 150; pizzaCount++; break;
+			case "burger": price = 200; burgerCount++; break;
+			case "sandwich": price = 100; sandwichCount++; break;
+			case "pasta": price = 250; pastaCount++; break;
+			default: price = 0;
+		}
+		
+		totalBill += price;
+		
+		
+		document.getElementById("item").innerText = "Selected Item: " + itemName;
+		document.getElementById("price").innerText = "Price: Rs." + price;
+		document.getElementById("total").innerText = "Total Bill: Rs." + totalBill;
+		document.getElementById("pizzaCount").innerText ="Pizza: " + pizzaCount;
+		document.getElementById("burgerCount").innerText ="Burger: " + burgerCount;
+		document.getElementById("sandwichCount").innerText ="Sandwich: " + sandwichCount;
+		document.getElementById("pastaCount").innerText ="Pasta: " + pastaCount;
+	}
+	</script>
+	
+	
+</body>
+
+</html>
