@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head> 
+<title>Login Page</title>
+<script>
+const correctU = "admin";
+const correctP = "123";
+
+function login(){
+let username = document.getElementById("username").value;
+let password = document.getElementById("password").value;
+var message;
+
+if (username === correctU && password === correctP) {
+message = "Login Successful";
+}
+else {
+message = "Login Failed";
+}
+document.getElementById("result").innerText = message;
+}
+</script>
+
+</head>
+
+<body>
+<h2> Login Page </h2>
+
+Username: <input type ="text" id = "username"><br><br>
+Password: <input type ="password" id = "password"><br><br>
+
+<button onclick ="login()">Login</button>
+<p id="result"></p>
+</body>
+</html>
+

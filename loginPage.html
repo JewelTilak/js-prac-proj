@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Login Page </title>
+</head>
+
+<body>
+<h1>Login</h1>
+
+<input id ="user" type = "text" placeholder = "Enter username: ">
+<br><br>
+<input id ="pass" type = "password" placeholder = "Enter password: ">
+<br><br>
+<button onclick="login()">Login</button>
+<p id = "result"></p>
+
+<script>
+const username = "Jewel";
+const password = "1234";
+
+function login() {
+let a = document.getElementById("user").value;
+let b = document.getElementById("pass").value;
+
+if ( username === a && password === b) {
+document.getElementById("result").innerText="Login Successful";
+}
+else {
+document.getElementById("result").innerText="Wrong";
+}
+}
+</script>
+</body>
+</html>
+
+
+
+

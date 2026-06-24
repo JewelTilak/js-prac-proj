@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+</head>
+
+<body>
+<button onclick = "order('dosa')">Dosa</button>
+<button onclick = "order('idli')">Idli</button>
+<button onclick = "order('sandwich')">Sandwich</button>
+<button onclick = "order('icecream')">Ice Cream</button>
+
+
+<p id = "item"></p>
+<p id = "price"></p>
+<p id = "total"></p>
+<p id = "dosaCount"></p>
+<p id = "idliCount"></p>
+<p id = "sdCount"></p>
+<p id = "icCount"></p>
+
+
+<script>
+var totalAmt = 0;
+	var dosaCount = 0;
+	var idliCount = 0;
+	var sdCount = 0;
+	var icCount = 0;
+function order(itemName) {
+
+	
+	var  price;
+	switch (itemName) {
+		case "dosa": price = 180; dosaCount++; break;
+		case "idli": price = 180; idliCount++; break;
+		case "sandwich": price = 180; sdCount++; break;
+		case "icecream": price = 180; icCount++; break;
+		default: price = 0;
+	}
+	
+	totalAmt += price;
+	document.getElementById("item").innerText = "Selected Item: " + itemName;
+	document.getElementById("price").innerText = "Price: Rs." + price;
+	document.getElementById("total").innerText = "Pay: Rs." + totalAmt;
+	document.getElementById("dosaCount").innerText = "Qty Selected: " + dosaCount;
+	document.getElementById("idliCount").innerText = "Qty Selected: " + idliCount;
+	document.getElementById("sdCount").innerText = "Qty Selected: " + sdCount;
+	document.getElementById("icCount").innerText = "Qty Selected: " + icCount;
+	
+	
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+
+<script>
+function addNumber() {
+let a = Number(document.getElementById("num1").value);
+let b = Number(document.getElementById("num2").value);
+document.getElementById("result").innerText = "Addition: " + (a+b);
+}
+
+function subNumber() {
+let a = Number(document.getElementById("num1").value);
+let b = Number(document.getElementById("num2").value);
+document.getElementById("result").innerText = "Subtraction: " + (a - b);
+}
+
+function clearr() {
+
+document.getElementById("num1").value="";
+document.getElementById("num2").value="";
+
+
+}
+
+</script>
+
+
+<body>
+
+<h1> add or subtract </h1>
+
+<input id = "num1" type = "Number" placeholder = "Enter Number 1: ">
+<input id = "num2" type = "Number" placeholder = "Enter Number 2: ">
+
+<button onclick="addNumber()">Add</button>
+<button onclick="subNumber()">Subtract</button>
+<button onclick="clearr()">clear</button>
+
+
+<p id = "result"></p>
+
+</body>
+</html>
